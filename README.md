@@ -109,7 +109,7 @@ The method in C returns an error code that represents the status of FindSurface 
 
 FindSurface's error codes other than  `FS_NOT_FOUND` and `FS_NO_ERROR` mean it failed to execute its algorithm for some reasons (e.g., an invalid parameter value, out of memory). It is recommended to design your application defensively so that your application does not have to get any error except the "out of memory" case in run-time. Refer to [here](TBD) for the cases of when FindSurface throws an error message.
 
-In C++, the wrapper indirectly handles the error code and provide the result. When the algorithm failed to find any geometric surface, the result object of which its `type` property is set to `FeatureType::none` is returned. In erroneous cases, the wrapper throws an exception corresponding to the error case.
+In C++, the wrapper indirectly handles the error code and provide the result. When the algorithm failed to find any geometric surface, the result object of which `type` property is set to `FeatureType::none` is returned. In erroneous cases, the wrapper throws an exception corresponding to the error case.
 
 ### Fetching the Result
 
@@ -125,7 +125,7 @@ C++:
 const float rmsError = result.rmsError;
 ````
 
-The `rms` property (`rmsError` in C++) describes the root-mean-squared value of errors between the inlier points and the found surface. The value describes how much the points fits the geometric surface well and it is not related to the algorithm's accuracy. This value will get greater as the points have greater errors in measurement, which means the result also be affected by the errors.
+The `rms` property (`rmsError` in C++) describes the root-mean-squared value of errors between the inlier points and the detected surface. The value describes how much the points fits the geometric surface well and it is not related to the algorithm's accuracy. This value will get greater as the points have greater errors in measurement, which means the result also be affected by the errors.
 
 C:
 
