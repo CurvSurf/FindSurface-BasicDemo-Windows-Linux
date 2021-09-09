@@ -160,7 +160,7 @@ switch (result.type) {
 }
 ````
 
-The `type` property has a value of `FS_FEATURE_TYPE` (`FeatureType` in C++) and can be one of the five types. The type will be the same as the input parameter, except for several special cases (refer to [Auto Detection](TBD) and [Smart Conversion](TBD)). Since the result type cannot be set to `any`, the `default` section will never be executed. 
+The `type` property has a value of `FS_FEATURE_TYPE` (`FeatureType` in C++) and can be one of the five types. The type will be the same as the input parameter, except for several special cases (refer to [Auto Detection](https://github.com/CurvSurf/FindSurface#auto-detection) and [Smart Conversion](https://github.com/CurvSurf/FindSurface#smart-conversion)). Since the result type cannot be set to `any`, the `default` section will never be executed. 
 
 
 
