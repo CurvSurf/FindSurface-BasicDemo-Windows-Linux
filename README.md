@@ -4,7 +4,9 @@
 ## Overview
 This sample code demonstrates the basic usage of FindSurface for a simple task, which attempts to search for specific geometry shapes in point cloud data.
 
-FindSurface Library ([Windows](https://github.com/CurvSurf/FindSurface-Windows), [Linux](https://github.com/CurvSurf/FindSurface-Linux)) is required to build the source code into a program. Download the framework [here (Windows)](https://github.com/CurvSurf/FindSurface-Windows/releases) or [here (Linux)](https://github.com/CurvSurf/FindSurface-Linux/releases).
+**NOTE:** The repositories listed below are presently inaccessible due to internal complications. If you have any inquiries or require further assistance in relation to this matter, please contact to support@curvsurf.com. We greatly appreciate your patience and understanding during this period.
+
+FindSurface Library ([Windows (unavailable)](https://github.com/CurvSurf/FindSurface-Windows), [Linux (unavailable)](https://github.com/CurvSurf/FindSurface-Linux)) is required to build the source code into a program. Download the framework [here (Windows) (unavailable_)](https://github.com/CurvSurf/FindSurface-Windows/releases) or [here (Linux) (unavailable)](https://github.com/CurvSurf/FindSurface-Linux/releases).
 
 To link the library with your project, add `-lFindSurface` flag to your linker options in case of using Linux and refer to [here](https://docs.microsoft.com/en-us/cpp/build/walkthrough-creating-and-using-a-dynamic-link-library-cpp?view=msvc-160) for Windows.
 
@@ -107,7 +109,7 @@ The parameters of  `findSurface` method are composed of property `featureType`, 
 
 The method in C returns an error code that represents the status of FindSurface context after its algorithm finishes the search, and if the method fails to detect any geometric shape, the method returns `FS_NOT_FOUND` enum value (`FeatureType::none` in C++). If succeeded, it fills the information about the geometry in the `result`, with the dummy error code `FS_NO_ERROR`.
 
-FindSurface's error codes other than  `FS_NOT_FOUND` and `FS_NO_ERROR` mean it failed to execute its algorithm for some reasons (e.g., an invalid parameter value, out of memory). It is recommended to design your application defensively so that your application does not have to get any error except the "out of memory" case in run-time. Refer to API references ([Windows](https://github.com/CurvSurf/FindSurface-Windows/blob/master/FindSurface-API-reference-C.md), [Linux](https://github.com/CurvSurf/FindSurface-Linux/blob/master/FindSurface-API-reference-C.md)) for the cases of when FindSurface throws an error message.
+FindSurface's error codes other than  `FS_NOT_FOUND` and `FS_NO_ERROR` mean it failed to execute its algorithm for some reasons (e.g., an invalid parameter value, out of memory). It is recommended to design your application defensively so that your application does not have to get any error except the "out of memory" case in run-time. Refer to API references ([Windows (unavailable)](https://github.com/CurvSurf/FindSurface-Windows/blob/master/FindSurface-API-reference-C.md), [Linux (unavailable)](https://github.com/CurvSurf/FindSurface-Linux/blob/master/FindSurface-API-reference-C.md)) for the cases of when FindSurface throws an error message.
 
 In C++, the wrapper indirectly handles the error code and provide the result. When the algorithm failed to find any geometric surface, the result object of which `type` property is set to `FeatureType::none` is returned. In erroneous cases, the wrapper throws an exception corresponding to the error case.
 
