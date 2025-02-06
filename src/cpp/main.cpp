@@ -40,8 +40,19 @@ void Test::Cpp::run() {
 
     context->setMeasurementAccuracy(measurementAccuracy);
     context->setMeanDistance(meanDistance);
-    context->setPointCloudDataFloat(POINTS.data(), POINTS.size(), sizeof(Point));
-
+    try {
+        context->setPointCloudDataFloat(POINTS.data(), POINTS.size(), sizeof(Point));
+    } catch (Exception::InvalidOperation e) {
+		printf("Error! POINT_COUNT exceeds the limitation on input point clouds. Refer to the GitHub documentation (github.com/CurvSurf/FindSurface-x86_64) for details.");
+        return;
+    } catch (Exception::InvalidArgument e) {
+        printf("Error! It might be one of the following error cases: the pointer is nullptr, the count is zero, or the stride is neither zero nor at least three times the size of a float or double.");
+        return;
+    } catch(...) {
+        printf("Unknown Error!");
+        return;
+    }
+    
     std::cout << "Normal cases: " << std::endl;
 
     int trial = 1;

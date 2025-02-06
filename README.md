@@ -4,11 +4,19 @@
 ## Overview
 This sample code demonstrates the basic usage of FindSurface for a simple task, which attempts to search for specific geometry shapes in point cloud data.
 
-**NOTE:** The repositories listed below are presently inaccessible due to internal complications. If you have any inquiries or require further assistance in relation to this matter, please contact to support@curvsurf.com. We greatly appreciate your patience and understanding during this period.
+**FindSurface Library ([Windows](https://github.com/CurvSurf/FindSurface-Windows), [Linux](https://github.com/CurvSurf/FindSurface-Linux)) is required** to build the source code into a program. Download the binaries from [here (Windows)](https://github.com/CurvSurf/FindSurface-Windows/releases) or [here (Linux)](https://github.com/CurvSurf/FindSurface-Linux/releases). Unzip the file and put the contents(i.e., `include` and `lib` directories) in `src` directory. **Make sure that the headers and binaries are in `src/include/` and `src/lib/` directories, respectively.** (Otherwise you can modify the paths in the CMakeLists.txt file.)
 
-FindSurface Library ([Windows (unavailable)](https://github.com/CurvSurf/FindSurface-Windows), [Linux (unavailable)](https://github.com/CurvSurf/FindSurface-Linux)) is required to build the source code into a program. Download the framework [here (Windows) (unavailable_)](https://github.com/CurvSurf/FindSurface-Windows/releases) or [here (Linux) (unavailable)](https://github.com/CurvSurf/FindSurface-Linux/releases).
+For those who are not familiar with CMake, you can run the following commands to build the source code (in the project's root directory):
 
-To link the library with your project, add `-lFindSurface` flag to your linker options in case of using Linux and refer to [here](https://docs.microsoft.com/en-us/cpp/build/walkthrough-creating-and-using-a-dynamic-link-library-cpp?view=msvc-160) for Windows.
+```
+mkdir build
+cd build
+cmake ..
+cmake --build .
+```
+
+The executable files will be generated under `build/bin` directory.
+
 
 ## About the source code
 

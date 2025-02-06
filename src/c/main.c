@@ -25,7 +25,14 @@ void runCTest() {
 
 	setMeasurementAccuracy(fs_ctx, measurement_accuracy);
 	setMeanDistance(fs_ctx, mean_distance);
-	setPointCloudFloat(fs_ctx, POINTS, POINT_COUNT, sizeof(Point));
+	FS_ERROR error = setPointCloudFloat(fs_ctx, POINTS, POINT_COUNT, sizeof(Point));
+	if (error == FS_INVALID_OPERATION) { 
+		printf("Error! POINT_COUNT exceeds the limitation on input point clouds. Refer to the GitHub documentation (github.com/CurvSurf/FindSurface-x86_64) for details.");
+		return;
+	} else if (error == FS_INVALID_VALUE) {
+		printf("Error! It might be one of the following error cases: the pointer is nullptr, the count is zero, or the stride is neither zero nor at least three times the size of a float or double.");
+		return;
+	}
 
 	printf("Normal cases: \n");
 
